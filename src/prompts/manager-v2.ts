@@ -108,7 +108,7 @@ export class AutoblocksPromptManagerV2<
   // prompt ID.
   private promptRevisionOverride: Prompt | undefined = undefined;
 
-  private readonly refreshIntervalTimer: NodeJS.Timer | undefined;
+  private readonly refreshIntervalTimer: NodeJS.Timeout | undefined;
   private readonly refreshTimeoutMs: number;
   private readonly initTimeoutMs: number;
 
