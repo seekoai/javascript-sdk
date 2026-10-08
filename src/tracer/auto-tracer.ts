@@ -4,7 +4,7 @@ import {
   BatchSpanProcessor,
   SimpleSpanProcessor,
 } from '@opentelemetry/sdk-trace-base';
-import { Resource } from '@opentelemetry/resources';
+import { resourceFromAttributes } from '@opentelemetry/resources';
 import { ATTR_SERVICE_NAME } from '@opentelemetry/semantic-conventions';
 import type { SpanProcessor } from '@opentelemetry/sdk-trace-base';
 import { ExecutionIdSpanProcessor } from './span-processor';
@@ -31,7 +31,7 @@ export const initAutoTracer = (args: {
   });
 
   // Creating a resource to identify your service in traces
-  const resource = new Resource({
+  const resource = resourceFromAttributes({
     [ATTR_SERVICE_NAME]: 'autoblocks-auto-tracer',
   });
 
